@@ -15,6 +15,7 @@ public class SongManager : MonoBehaviour
     public int EndGameMiss = 1;
     public int EndGameHit = 1;
     public UIController ui;
+    ParticleSystem[] ps;
     void Start()
     {
         Time.timeScale = 1;
@@ -24,21 +25,21 @@ public class SongManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             catchers[1].sprite = images[1];
             CheckTouch(1);
         }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             catchers[1].sprite = images[0];
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             catchers[2].sprite = images[1];
             CheckTouch(2);
         }
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             catchers[2].sprite = images[0];
         }
@@ -72,7 +73,11 @@ public class SongManager : MonoBehaviour
         if (types[type])  //Фиксация попадания
         {
             hit++;
-            effects[type].GetComponentInChildren<ParticleSystem>().Play();
+            ps = effects[type].GetComponentsInChildren<ParticleSystem>();
+            for (int i=0; i< ps.Length;i++)
+            {
+                ps[i].Play();
+            }
             Debug.Log("GoodCheck: " + hit);
             types[type] = false;
             notes[type].GetComponent<Note>().SetMiss(false);
