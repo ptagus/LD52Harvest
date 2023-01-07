@@ -26,6 +26,33 @@ public class SongManager : MonoBehaviour
         {
             catchers[1].sprite = images[0];
         }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            catchers[2].sprite = images[1];
+            CheckTouch(1);
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            catchers[2].sprite = images[0];
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            catchers[0].sprite = images[1];
+            CheckTouch(1);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            catchers[0].sprite = images[0];
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            catchers[3].sprite = images[1];
+            CheckTouch(1);
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            catchers[3].sprite = images[0];
+        }
     }
 
     void CheckTouch(int type)
