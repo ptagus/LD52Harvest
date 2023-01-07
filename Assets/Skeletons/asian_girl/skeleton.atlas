@@ -1,0 +1,78 @@
+
+skeleton.png
+size: 4505,4504
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 2
+  size: 4501, 4500
+  orig: 4501, 4500
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 4504,4505
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hairs
+  rotate: false
+  xy: 2, 2
+  size: 4500, 4501
+  orig: 4500, 4501
+  offset: 0, 0
+  index: -1
+
+skeleton3.png
+size: 4504,4504
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+head
+  rotate: false
+  xy: 2, 2
+  size: 4500, 4500
+  orig: 4500, 4500
+  offset: 0, 0
+  index: -1
+
+skeleton4.png
+size: 4504,4504
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+left_hand
+  rotate: false
+  xy: 2, 2
+  size: 4500, 4500
+  orig: 4500, 4500
+  offset: 0, 0
+  index: -1
+
+skeleton5.png
+size: 4505,4504
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+musitian
+  rotate: false
+  xy: 2, 2
+  size: 4501, 4500
+  orig: 4501, 4500
+  offset: 0, 0
+  index: -1
+
+skeleton6.png
+size: 4504,4505
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+right_hand
+  rotate: false
+  xy: 2, 2
+  size: 4500, 4501
+  orig: 4500, 4501
+  offset: 0, 0
+  index: -1
