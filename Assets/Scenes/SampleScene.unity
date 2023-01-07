@@ -280,7 +280,9 @@ MonoBehaviour:
   removeLine: {fileID: 190767211}
   speed: 0.1
   creationTypeButton: 0
-  generationTime: 0.27
+  generationTime:
+  - 1.08
+  - 0.54
 --- !u!4 &150433314
 Transform:
   m_ObjectHideFlags: 0
@@ -2972,6 +2974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 295880070}
   button: {fileID: 295880066}
+  AboutPanel: {fileID: 0}
 --- !u!114 &2130159950
 MonoBehaviour:
   m_ObjectHideFlags: 0
