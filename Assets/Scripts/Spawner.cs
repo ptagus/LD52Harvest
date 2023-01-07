@@ -11,7 +11,8 @@ public class Spawner : MonoBehaviour
     public float speed = 0; // Скорость нот
     int nowline;
     public bool creationTypeButton;
-    public float generationTime;
+    public float[] generationTime;
+    int genTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,8 @@ public class Spawner : MonoBehaviour
         note.GetComponent<Note>().SetSpeed(speed);
         if (notesCount > 0)
         {
-            Invoke("CreateNote", generationTime);
+            genTime = Random.Range(0, generationTime.Length);
+            Invoke("CreateNote", generationTime[genTime]);
         }
     }
 }
