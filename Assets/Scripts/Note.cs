@@ -33,6 +33,7 @@ public class Note : MonoBehaviour
         {
             Debug.Log("Missed");
             collision.GetComponent<SongManager>().NowState(type, false, this.gameObject);
+            collision.GetComponent<SongManager>().AddMiss();
             Destroy();
         }
     }
