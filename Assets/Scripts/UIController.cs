@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     public Image blackScreen;
     public GameObject button;
+    public GameObject AboutPanel;
     bool endscene;
     Color color;
     int nextscene;
@@ -26,22 +27,36 @@ public class UIController : MonoBehaviour
             if (color.a >= 1)
             {
                 endscene = false;
-                NextScene(nextscene);
+                NextScene();
             }
         }
     }
 
-    public void NextScene(int scene)
+    public void NextScene()
     {
-        SceneManager.LoadScene(nextscene);
+        SceneManager.LoadSceneAsync(nextscene);
     }
-    public void EndScene()
+    public void EndScene(int scene)
     {
+        nextscene = scene;
         endscene = true;
     }
 
     public void SetButtonActive()
     {
         button.SetActive(true);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    public void OpenAbout()
+    {
+        AboutPanel.SetActive(true);
+    }
+    public void CloseAbout()
+    {
+        AboutPanel.SetActive(false);
     }
 }
