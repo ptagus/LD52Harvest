@@ -13,7 +13,7 @@ public class Note : MonoBehaviour
     {
         spawnPos = spawnLine.position;
         removePos = removeLine.position;
-        removePos.x = spawnPos.x;
+        removePos.y = spawnPos.y;
     }
 
     // Update is called once per frame
