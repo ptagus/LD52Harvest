@@ -25,21 +25,21 @@ public class SongManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             catchers[1].sprite = images[1];
             CheckTouch(1);
         }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             catchers[1].sprite = images[0];
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             catchers[2].sprite = images[1];
             CheckTouch(2);
         }
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             catchers[2].sprite = images[0];
         }
