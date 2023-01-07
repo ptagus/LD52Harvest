@@ -29,7 +29,7 @@ public class SongManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             catchers[2].sprite = images[1];
-            CheckTouch(1);
+            CheckTouch(2);
         }
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -38,7 +38,7 @@ public class SongManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             catchers[0].sprite = images[1];
-            CheckTouch(1);
+            CheckTouch(0);
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
@@ -47,7 +47,7 @@ public class SongManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             catchers[3].sprite = images[1];
-            CheckTouch(1);
+            CheckTouch(3);
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {
