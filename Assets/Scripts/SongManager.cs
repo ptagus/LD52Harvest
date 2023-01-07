@@ -9,6 +9,7 @@ public class SongManager : MonoBehaviour
     bool[] types = new bool[4];
     GameObject[] notes = new GameObject[4];
     public SpriteRenderer[] catchers;
+    public GameObject[] effects;
     public Sprite[] images;
     int hit = 0, miss = 0;
     public int EndGameMiss = 1;
@@ -70,6 +71,7 @@ public class SongManager : MonoBehaviour
         if (types[type])  //Фиксация попадания
         {
             hit++;
+            effects[type].GetComponent<ParticleSystem>().Play();
             Debug.Log("GoodCheck: " + hit);
             types[type] = false;
             notes[type].GetComponent<Note>().SetMiss(false);
