@@ -7,7 +7,8 @@ public class SongManager : MonoBehaviour
     BoxCollider2D lineCollider;
     bool[] types = new bool[4];
     GameObject[] notes = new GameObject[4];
-
+    public SpriteRenderer[] catchers;
+    public Sprite[] images;
     void Start()
     {
         lineCollider = GetComponent<BoxCollider2D>();
@@ -18,7 +19,39 @@ public class SongManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            catchers[1].sprite = images[1];
             CheckTouch(1);
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            catchers[1].sprite = images[0];
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            catchers[2].sprite = images[1];
+            CheckTouch(1);
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            catchers[2].sprite = images[0];
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            catchers[0].sprite = images[1];
+            CheckTouch(1);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            catchers[0].sprite = images[0];
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            catchers[3].sprite = images[1];
+            CheckTouch(1);
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            catchers[3].sprite = images[0];
         }
     }
 
