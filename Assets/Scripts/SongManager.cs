@@ -108,7 +108,6 @@ public class SongManager : MonoBehaviour
 
     void EndGameMenu(bool win)
     {
-        Time.timeScale = 0;
         if (win)
         {
             Debug.Log("win");
