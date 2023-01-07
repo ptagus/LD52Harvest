@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SongManager : MonoBehaviour
 {
@@ -9,8 +10,12 @@ public class SongManager : MonoBehaviour
     GameObject[] notes = new GameObject[4];
     public SpriteRenderer[] catchers;
     public Sprite[] images;
+    int hit = 0, miss = 0;
+    public int EndGameMiss = 1;
+    public int EndGameHit = 1;
     void Start()
     {
+        Time.timeScale = 1;
         lineCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -53,6 +58,10 @@ public class SongManager : MonoBehaviour
         {
             catchers[3].sprite = images[0];
         }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void CheckTouch(int type)
@@ -60,10 +69,16 @@ public class SongManager : MonoBehaviour
         //Debug.Log("Check");
         if (types[type])  //Фиксация попадания
         {
-            Debug.Log("GoodCheck");
+            hit++;
+            Debug.Log("GoodCheck: " + hit);
             types[type] = false;
             notes[type].GetComponent<Note>().SetMiss(false);
             notes[type].GetComponent<Note>().Destroy();
+            if (hit >= EndGameHit)
+            {
+                EndGameMenu(true);
+            }
+
             return;
         }
         if (!types[type]) //Фиксация неверного нажатия
@@ -77,5 +92,29 @@ public class SongManager : MonoBehaviour
     {
         types[type] = state;
         notes[type] = obj;
+    }
+
+    public void AddMiss()
+    {
+        miss++;
+        if (miss >= EndGameMiss)
+        {
+            EndGameMenu(false);
+        }
+    }
+
+    void EndGameMenu(bool win)
+    {
+        Time.timeScale = 0;
+        if (win)
+        {
+            Debug.Log("win");
+            //Show win image
+        }
+        if (!win)
+        {
+            Debug.Log("lose");
+            //Show lose image
+        }
     }
 }
