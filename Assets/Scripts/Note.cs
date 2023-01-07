@@ -24,7 +24,6 @@ public class Note : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
         collision.GetComponent<SongManager>().NowState(type, true, this.gameObject);
 
     }
@@ -32,7 +31,7 @@ public class Note : MonoBehaviour
     {
         if (miss)
         {
-            Debug.Log("TriggerExit");
+            Debug.Log("Missed");
             collision.GetComponent<SongManager>().NowState(type, false, this.gameObject);
             Destroy();
         }
