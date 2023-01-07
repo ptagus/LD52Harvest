@@ -15,6 +15,7 @@ public class SongManager : MonoBehaviour
     public int EndGameMiss = 1;
     public int EndGameHit = 1;
     public UIController ui;
+    ParticleSystem[] ps;
     void Start()
     {
         Time.timeScale = 1;
@@ -72,7 +73,11 @@ public class SongManager : MonoBehaviour
         if (types[type])  //Фиксация попадания
         {
             hit++;
-            effects[type].GetComponentInChildren<ParticleSystem>().Play();
+            ps = effects[type].GetComponentsInChildren<ParticleSystem>();
+            for (int i=0; i< ps.Length;i++)
+            {
+                ps[i].Play();
+            }
             Debug.Log("GoodCheck: " + hit);
             types[type] = false;
             notes[type].GetComponent<Note>().SetMiss(false);
