@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public Image blackScreen;
     public GameObject button;
     public GameObject AboutPanel;
+    public Slider slider;
     bool endscene;
     Color color;
     int nextscene;
@@ -58,5 +59,10 @@ public class UIController : MonoBehaviour
     public void CloseAbout()
     {
         AboutPanel.SetActive(false);
+    }
+
+    public void Slidernewvalue(int value)
+    {
+        slider.value = value;
     }
 }
