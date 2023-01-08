@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SongManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class SongManager : MonoBehaviour
     [Header("UI")]
     [Space(10)]
     public UIController ui;
+    public Image[] lives;
+    public Sprite loseLiveImage;
     ParticleSystem[] ps;
     [Header("Music")]
     [Space(10)]
@@ -132,6 +135,7 @@ public class SongManager : MonoBehaviour
 
     public void AddMiss()
     {
+        lives[miss].sprite = loseLiveImage;
         miss++;
         if (miss >= EndGameMiss)
         {
