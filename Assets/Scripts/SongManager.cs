@@ -107,7 +107,6 @@ public class SongManager : MonoBehaviour
             {
                 ps[i].Play();
             }
-            Debug.Log("GoodCheck: " + hit);
             types[type] = false;
             notes[type].GetComponent<Note>().SetMiss(false);
             notes[type].GetComponent<Note>().Destroy();
@@ -125,7 +124,6 @@ public class SongManager : MonoBehaviour
                 sideAudioSource.clip = badMusicEffect;
                 sideAudioSource.Play();
             }
-            Debug.Log("BadCheck");
             return;
         }
     }
@@ -144,6 +142,8 @@ public class SongManager : MonoBehaviour
             miss++;
             if (miss >= EndGameMiss)
             {
+                harvest[harvestlvl].SetActive(false);
+                harvest[3].SetActive(true);
                 lose = true;
                 EndGameMenu(false);
             }
@@ -154,10 +154,11 @@ public class SongManager : MonoBehaviour
     {
         if (win)
         {
-            Debug.Log("win");
+            for (int i = 0; i < spawner.lines.Length; i++)
+                spawner.lines[i].gameObject.SetActive(false);
             if (scemenumber == 4)
             {
-
+                ui.ShowWinScreen();
             }
             else
             {
@@ -176,7 +177,6 @@ public class SongManager : MonoBehaviour
                 mainAudioSource.loop = false;
                 ui.StartAnimationForRestartButton();
             }
-            Debug.Log("lose");
             //Show lose image
         }
     }
