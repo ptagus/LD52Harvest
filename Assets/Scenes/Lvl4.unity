@@ -1435,6 +1435,7 @@ MonoBehaviour:
   - 0.559
   - 1.118
   - 1.677
+  - 0.279
 --- !u!4 &150433314
 Transform:
   m_ObjectHideFlags: 0
@@ -12827,7 +12828,7 @@ MonoBehaviour:
   - {fileID: -8051352113334238305, guid: 5f59a7b40ab8f9c40be67eb437a171c7, type: 3}
   spawner: {fileID: 150433313}
   EndGameMiss: 3
-  EndGameHit: 40
+  EndGameHit: 34
   updatetolvl2harvest: 12
   updatetolvl3harvest: 26
   ui: {fileID: 2130159949}
@@ -26402,7 +26403,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1097540311}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 40
+  m_MaxValue: 34
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
