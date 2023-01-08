@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public GameObject AboutPanel;
     public Slider slider;
     public GameObject restartButton;
+    public Image winScreen;
     bool endscene;
     Color color;
     int nextscene;
@@ -69,6 +70,11 @@ public class UIController : MonoBehaviour
 
     public void StartAnimationForRestartButton()
     {
-        restartButton.GetComponent<Animator>().Play(0);
+        restartButton.GetComponent<Animator>().cullingMode = AnimatorCullingMode.AlwaysAnimate;
+    }
+
+    public void ShowWinScreen()
+    {
+        winScreen.gameObject.SetActive(true);
     }
 }
