@@ -49,39 +49,39 @@ public class SongManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            catchers[1].sprite = images[1];
+            catchers[1].sprite = images[0];
             CheckTouch(1);
         }
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
-            catchers[1].sprite = images[0];
+            catchers[1].sprite = images[1];
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            catchers[2].sprite = images[1];
+            catchers[2].sprite = images[0];
             CheckTouch(2);
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
-            catchers[2].sprite = images[0];
+            catchers[2].sprite = images[2];
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            catchers[0].sprite = images[1];
+            catchers[0].sprite = images[0];
             CheckTouch(0);
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
-            catchers[0].sprite = images[0];
+            catchers[0].sprite = images[3];
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            catchers[3].sprite = images[1];
+            catchers[3].sprite = images[0];
             CheckTouch(3);
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {
-            catchers[3].sprite = images[0];
+            catchers[3].sprite = images[4];
         }
         if (Input.GetKeyUp(KeyCode.R))
         {
