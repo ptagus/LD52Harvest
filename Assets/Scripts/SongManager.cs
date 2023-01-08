@@ -155,7 +155,7 @@ public class SongManager : MonoBehaviour
         {
             if (mainAudioSource != null)
             {
-                mainAudioSource.clip = badMusicEffect;
+                mainAudioSource.clip = loseMusicEffect;
                 mainAudioSource.Play();
             }
             Debug.Log("lose");
