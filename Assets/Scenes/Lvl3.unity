@@ -1808,10 +1808,10 @@ RectTransform:
   m_Father: {fileID: 1904907531}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.04, y: 0.35}
-  m_AnchorMax: {x: 0.96, y: 0.65}
+  m_AnchorMin: {x: 0.01, y: 0.35}
+  m_AnchorMax: {x: 0.99, y: 0.68}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &225071557
 GameObject:
@@ -2937,8 +2937,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 288804504142565025, guid: 92f93c9b368eb8a48a779321e0a927bd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5735,7 +5735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &618271226
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9853,7 +9853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1097540311
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11546,7 +11546,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: 3288d7510c46e3745b950c5cc9a574c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9e4630ea021cb540be10ee04ebf36ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12789,7 +12789,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9e7ace0eb9795134db064800b4822414, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 136897b37b566b34a8032e6f715937a4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -18159,6 +18159,7 @@ MonoBehaviour:
   AboutPanel: {fileID: 0}
   slider: {fileID: 1904907532}
   restartButton: {fileID: 1706759712}
+  winScreen: {fileID: 0}
 --- !u!114 &2130159950
 MonoBehaviour:
   m_ObjectHideFlags: 0
