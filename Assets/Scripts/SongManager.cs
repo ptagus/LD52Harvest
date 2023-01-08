@@ -11,11 +11,27 @@ public class SongManager : MonoBehaviour
     public SpriteRenderer[] catchers;
     public GameObject[] effects;
     public Sprite[] images;
-    int hit = 0, miss = 0;
+    int hit = 0, miss = 0, harvestlvl=0;
+    [Header("IntParams")]
+    [Space(10)]
     public int EndGameMiss = 1;
     public int EndGameHit = 1;
+    public int updatetolvl2harvest = 5;
+    public int updatetolvl3harvest = 10;
+    [Header("UI")]
+    [Space(10)]
     public UIController ui;
     ParticleSystem[] ps;
+    [Header("Music")]
+    [Space(10)]
+    public AudioClip badMusicEffect;
+    public AudioSource sideAudioSource;
+    public AudioClip loseMusicEffect;
+    public AudioSource mainAudioSource;
+    [Header("Harvest")]
+    [Space(10)]
+    public GameObject[] harvest;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -73,6 +89,13 @@ public class SongManager : MonoBehaviour
         if (types[type])  //Фиксация попадания
         {
             hit++;
+            ui.Slidernewvalue(hit);
+            if (hit == updatetolvl2harvest || hit == updatetolvl3harvest)
+            {
+                harvest[harvestlvl].SetActive(false);
+                harvestlvl++;
+                harvest[harvestlvl].SetActive(true);
+            }
             ps = effects[type].GetComponentsInChildren<ParticleSystem>();
             for (int i=0; i< ps.Length;i++)
             {
@@ -91,6 +114,11 @@ public class SongManager : MonoBehaviour
         }
         if (!types[type]) //Фиксация неверного нажатия
         {
+            if (sideAudioSource != null)
+            {
+                sideAudioSource.clip = badMusicEffect;
+                sideAudioSource.Play();
+            }
             Debug.Log("BadCheck");
             return;
         }
@@ -121,6 +149,11 @@ public class SongManager : MonoBehaviour
         }
         if (!win)
         {
+            if (mainAudioSource != null)
+            {
+                mainAudioSource.clip = badMusicEffect;
+                mainAudioSource.Play();
+            }
             Debug.Log("lose");
             //Show lose image
         }
