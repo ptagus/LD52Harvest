@@ -7964,11 +7964,16 @@ MonoBehaviour:
   images:
   - {fileID: 21300000, guid: 8cb4432c332fbdd41998b0850ee8bc58, type: 3}
   - {fileID: 21300000, guid: 7ee48c5fba4919649a8a6094cbead669, type: 3}
-  EndGameMiss: 555
+  EndGameMiss: 3
   EndGameHit: 20
   updatetolvl2harvest: 5
   updatetolvl3harvest: 10
   ui: {fileID: 2130159949}
+  lives:
+  - {fileID: 1078959526}
+  - {fileID: 971721612}
+  - {fileID: 2058077815}
+  loseLiveImage: {fileID: 21300000, guid: af32364085079ce4bb53c957ac75ca7c, type: 3}
   badMusicEffect: {fileID: 8300000, guid: e801c8b73e5874e4f94aafa6126be454, type: 3}
   sideAudioSource: {fileID: 873533824}
   loseMusicEffect: {fileID: 8300000, guid: 7a43468076ee5fa448611e2717decd80, type: 3}
