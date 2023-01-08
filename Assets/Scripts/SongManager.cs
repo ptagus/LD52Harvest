@@ -12,7 +12,9 @@ public class SongManager : MonoBehaviour
     public SpriteRenderer[] catchers;
     public GameObject[] effects;
     public Sprite[] images;
-    int hit = 0, miss = 0, harvestlvl=0;
+    public Spawner spawner;
+    int hit = 0, miss = 0, harvestlvl=0, scemenumber = 0;
+    bool lose;
     [Header("IntParams")]
     [Space(10)]
     public int EndGameMiss = 1;
@@ -38,6 +40,7 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        scemenumber = SceneManager.GetActiveScene().buildIndex;
         lineCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -82,7 +85,7 @@ public class SongManager : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.R))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(scemenumber);
         }
     }
 
@@ -135,11 +138,15 @@ public class SongManager : MonoBehaviour
 
     public void AddMiss()
     {
-        lives[miss].sprite = loseLiveImage;
-        miss++;
-        if (miss >= EndGameMiss)
+        if (!lose)
         {
-            EndGameMenu(false);
+            lives[miss].sprite = loseLiveImage;
+            miss++;
+            if (miss >= EndGameMiss)
+            {
+                lose = true;
+                EndGameMenu(false);
+            }
         }
     }
 
@@ -148,16 +155,26 @@ public class SongManager : MonoBehaviour
         if (win)
         {
             Debug.Log("win");
-            ui.SetButtonActive();
+            if (scemenumber == 4)
+            {
+
+            }
+            else
+            {
+                ui.SetButtonActive();
+            }
             //Show win image
         }
         if (!win)
         {
             if (mainAudioSource != null)
             {
+                for (int i = 0; i < spawner.lines.Length; i++)
+                    spawner.lines[i].gameObject.SetActive(false);
                 mainAudioSource.clip = loseMusicEffect;
                 mainAudioSource.Play();
                 mainAudioSource.loop = false;
+                ui.StartAnimationForRestartButton();
             }
             Debug.Log("lose");
             //Show lose image
