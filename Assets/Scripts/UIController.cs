@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     public GameObject button;
     public GameObject AboutPanel;
     public Slider slider;
+    public GameObject restartButton;
     bool endscene;
     Color color;
     int nextscene;
@@ -64,5 +65,10 @@ public class UIController : MonoBehaviour
     public void Slidernewvalue(int value)
     {
         slider.value = value;
+    }
+
+    public void StartAnimationForRestartButton()
+    {
+        restartButton.GetComponent<Animator>().Play(0);
     }
 }

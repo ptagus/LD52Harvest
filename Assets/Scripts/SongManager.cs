@@ -158,6 +158,7 @@ public class SongManager : MonoBehaviour
                 mainAudioSource.clip = loseMusicEffect;
                 mainAudioSource.Play();
                 mainAudioSource.loop = false;
+                ui.StartAnimationForRestartButton();
             }
             Debug.Log("lose");
             //Show lose image
