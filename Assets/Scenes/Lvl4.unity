@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846b839443d2bd7448804326af7ce2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesCount: 60
+  notesCount: 80
   notePrefab: {fileID: 6787213136776356826, guid: a62e23a09769af145ad6bcfb32ba51ea, type: 3}
   lines:
   - {fileID: 66038054}
@@ -1434,6 +1434,7 @@ MonoBehaviour:
   generationTime:
   - 0.559
   - 1.118
+  - 1.677
 --- !u!4 &150433314
 Transform:
   m_ObjectHideFlags: 0
@@ -12892,10 +12893,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8cb4432c332fbdd41998b0850ee8bc58, type: 3}
   - {fileID: 21300000, guid: 7ee48c5fba4919649a8a6094cbead669, type: 3}
   spawner: {fileID: 150433313}
-  EndGameMiss: 5
-  EndGameHit: 2
-  updatetolvl2harvest: 5
-  updatetolvl3harvest: 10
+  EndGameMiss: 3
+  EndGameHit: 40
+  updatetolvl2harvest: 12
+  updatetolvl3harvest: 26
   ui: {fileID: 2130159949}
   lives:
   - {fileID: 1078959526}
@@ -12910,6 +12911,7 @@ MonoBehaviour:
   - {fileID: 587744025}
   - {fileID: 825363211}
   - {fileID: 1803630501}
+  - {fileID: 7249017795959748799, guid: 476af6a7d177058499e46548f82bebe0, type: 3}
 --- !u!61 &873533822
 BoxCollider2D:
   m_ObjectHideFlags: 0
