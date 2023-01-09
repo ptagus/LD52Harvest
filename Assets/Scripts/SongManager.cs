@@ -121,6 +121,7 @@ public class SongManager : MonoBehaviour
         {
             if (sideAudioSource != null)
             {
+                AddMiss();
                 sideAudioSource.clip = badMusicEffect;
                 sideAudioSource.Play();
             }
